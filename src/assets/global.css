@@ -4,7 +4,20 @@
     display: none;
   }
 
-  :root {
-    --header-bg-color: #112330; /* Example color */
-    --header-text-color: #ffffff; /* White color */
-  }
+  .center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
