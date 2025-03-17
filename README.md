@@ -1,6 +1,8 @@
 ## About
 
-TKTK
+The Cambridge University Astronomical Society website.
+
+This is based off of the [Astro static site generator](https://astro.build).
 
 
 ## Important files and directories
