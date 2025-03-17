@@ -27,4 +27,6 @@ Directories:
 
 Every time there is a change to the main branch, the page gets published. As such, **only finalised changes should be pushed to the main branch**. Any test changes should be pushed to their [own branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches).
 
+    Currently the above is disabled as this is still under active development, and all changes are being made to the main branch. Once "v1" is ready this will come into affect.
+
 To run this locally to test, you should make sure [node.js is installed](https://nodejs.org/en/download), and then (within the base of this repository) run `npm install`. That should install all the required packages allowing you to then run `npm run dev` which will serve a local instance at [localhost:4321](http://localhost:4321) which updates with saved changes in root directory. 
