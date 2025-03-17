@@ -1,19 +1,29 @@
 ---
-import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader } from "astro-navbar";
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+import cuasLogo from "../assets/cuas_logo_rect_white_transparent.svg";
 ---
 
-<StickyHeader class="lg:flex p-5  gap-5">
-  <Astronav>
-    <div class="flex w-full justify-between">
-      <a>Your Logo</a>
-      <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800" />
+<header class="lg:flex p-5 gap-6" style="background-color: var(--header-bg-color); color: var(--header-text-color);">
+  <Astronav closeOnClick>
+    <div class="flex justify-between">
+      <a href="/">
+        <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
+      </a>
+      <div class="block">
+        <MenuIcon class="w-4 h-4" style="color: var(--header-text-color);" />
       </div>
     </div>
     <MenuItems class="hidden lg:flex">
       <ul class="flex flex-col lg:flex-row lg:gap-5">
-        <li>Home</li>
-        <li>
+        <li class="flex-shrink-0">Home</li>
+        <li class="flex-shrink-0">
           <Dropdown class="group">
             <button class="flex items-center">
               <span>About</span>
@@ -23,14 +33,15 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
                 viewBox="0 0 24 24"
                 stroke-width="3"
                 stroke="currentColor"
-                class="w-3 h-3 mt-0.5 group-open:rotate-180">
+                class="w-3 h-3 mt-0.5 group-open:rotate-180"
+                style="color: var(--header-text-color);">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
               </svg>
             </button>
-            <DropdownItems class="relative">
+            <DropdownItems class="relative" style="background-color: var(--header-bg-color); color: var(--header-text-color);">
               <div class="absolute top-0">
                 <ul>
                     <li>About CUAS</li>
@@ -42,7 +53,7 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
             </DropdownItems>
           </Dropdown>
         </li>
-        <li>
+        <li class="flex-shrink-0">
             <Dropdown class="group">
               <button class="flex items-center">
                 <span>Membership</span>
@@ -52,14 +63,15 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
                   viewBox="0 0 24 24"
                   stroke-width="3"
                   stroke="currentColor"
-                  class="w-3 h-3 mt-0.5 group-open:rotate-180">
+                  class="w-3 h-3 mt-0.5 group-open:rotate-180"
+                  style="color: var(--header-text-color);">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
                 </svg>
               </button>
-              <DropdownItems class="relative">
+              <DropdownItems class="relative" style="background-color: var(--header-bg-color); color: var(--header-text-color);">
                 <div class="absolute top-0">
                   <ul>
                       <li>About membership</li>
@@ -69,7 +81,7 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
               </DropdownItems>
             </Dropdown>
           </li>
-          <li>
+          <li class="flex-shrink-0">
             <Dropdown class="group">
               <button class="flex items-center">
                 <span>Neptune Magazine</span>
@@ -79,14 +91,15 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
                   viewBox="0 0 24 24"
                   stroke-width="3"
                   stroke="currentColor"
-                  class="w-3 h-3 mt-0.5 group-open:rotate-180">
+                  class="w-3 h-3 mt-0.5 group-open:rotate-180"
+                  style="color: var(--header-text-color);">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
                 </svg>
               </button>
-              <DropdownItems class="relative">
+              <DropdownItems class="relative" style="background-color: var(--header-bg-color); color: var(--header-text-color);">
                 <div class="absolute top-0">
                   <ul>
                       <li>Neptune Magazine</li>
@@ -97,7 +110,7 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
               </DropdownItems>
             </Dropdown>
           </li>
-          <li>
+          <li class="flex-shrink-0">
             <Dropdown class="group">
               <button class="flex items-center">
                 <span>Observing</span>
@@ -107,14 +120,15 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
                   viewBox="0 0 24 24"
                   stroke-width="3"
                   stroke="currentColor"
-                  class="w-3 h-3 mt-0.5 group-open:rotate-180">
+                  class="w-3 h-3 mt-0.5 group-open:rotate-180"
+                  style="color: var(--header-text-color);">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
                 </svg>
               </button>
-              <DropdownItems class="relative">
+              <DropdownItems class="relative" style="background-color: var(--header-bg-color); color: var(--header-text-color);">
                 <div class="absolute top-0">
                   <ul>
                       <li>Guides</li>
@@ -126,8 +140,8 @@ import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems, StickyHeader }
               </DropdownItems>
             </Dropdown>
           </li>
-          <li><a href="/socials/">Socials</a></li> 
+          <li class="flex-shrink-0"><a href="/socials/" style="color: var(--header-text-color);">Socials</a></li> 
       </ul>
     </MenuItems>
   </Astronav>
-</StickyHeader>
+</header>

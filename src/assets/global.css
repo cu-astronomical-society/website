@@ -3,3 +3,8 @@
 .hidden {
     display: none;
   }
+
+  :root {
+    --header-bg-color: #112330; /* Example color */
+    --header-text-color: #ffffff; /* White color */
+  }
