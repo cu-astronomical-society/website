@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CoverGallery from '../../components/CoverGallery.astro';
+
+---
+
+<Layout>
+            <h1>Neptune Magazine</h1>
+            <p>Neptune is the official CUAS magazine.</p>
+            <p>There is a long series of back issues at the Institute of Astronomy Library (see also the History section).</p>
+            <p>If you are interested in contributing ...</p>
+       
+<h2>Why Neptune?</h2>        
+
+<p>Neptune has a special place in the history of the Northumberland telescope. In 1846, the director of the observatory, James Challis, set out to look for the 8th planet predicted by Adams and LeVerrier – he recorded the planet in his observations but failed to recognise it as such before the German astronomer Galle announced his discovery. Now our magazine bears the planet’s name.</p>
+
+        <section class="neptune-section">
+            <h2>Browse Our Editions</h2>
+            <p>Explore all published editions of Neptune Magazine below.</p>
+            
+            <CoverGallery />
+        </section>
+</Layout>
+
+<style>
+    .neptune-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+   
+
+
+    
+    .neptune-section {
+        margin: 50px 0;
+    }
+
+</style>

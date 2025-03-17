@@ -1,0 +1,105 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PDFViewer from '../../../components/PDFViewer.astro';
+
+// Get the year parameter from the URL
+const { year } = Astro.params;
+
+// Format the year for display (e.g., "2023-24")
+const formattedYear = year;
+
+// Construct the path to the PDF file
+const pdfPath = `/src/assets/neptune/pdfs/Neptune${year}.pdf`;
+
+// Get cover image for this edition
+const coverImages = await Astro.glob('/src/assets/neptune/covers/*.png');
+const coverImage = coverImages.find(cover => {
+    const fileName = cover.default.src.split('/').pop();
+    return fileName.includes(year);
+});
+
+
+export async function getStaticPaths() {
+    // Get all PDF files from the pdfs directory
+    const editions = await Astro.glob('/src/assets/neptune/pdfs/*.pdf');
+    
+    return editions.map(edition => {
+        const filePath = edition.default;
+        const fileName = filePath.split('/').pop();
+        // Extract year from filename (e.g., "Neptune2023-24.pdf" → "2023-24")
+        const matches = fileName.match(/Neptune(\d{4}-\d{2})\.pdf/);
+        if (!matches) return null;
+        const year = matches[1];
+        
+        return { params: { year } };
+    }).filter(Boolean);
+}
+---
+
+<Layout title={`Neptune Magazine ${formattedYear} Edition`}>
+    <div class="edition-container">
+        <div class="edition-header">
+            <h1>Neptune Magazine {formattedYear} Edition</h1>
+            
+            {coverImage && (
+                <div class="edition-cover">
+                    <img src={coverImage.default.src} alt={`Neptune Magazine ${formattedYear} Cover`} />
+                </div>
+            )}
+            
+            <div class="edition-description">
+                <p>Browse through the Neptune Magazine {formattedYear} edition below or <a href={pdfPath} download={`Neptune-${formattedYear}.pdf`}>download the PDF</a>.</p>
+            </div>
+        </div>
+        
+        <PDFViewer pdfPath={pdfPath} />
+        
+        <div class="back-link">
+            <a href="/neptune">← Back to Neptune Magazine</a>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .edition-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .edition-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .edition-cover {
+        max-width: 300px;
+        margin: 20px auto;
+    }
+    
+    .edition-cover img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .edition-description {
+        margin: 20px 0;
+    }
+    
+    .back-link {
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .back-link a {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .back-link a:hover {
+        text-decoration: underline;
+    }
+</style>

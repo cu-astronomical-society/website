@@ -27,4 +27,5 @@ header .dropdown-items .dropdown-content {
 
 header a, footer a {
     color: var(--header-text-color);
+    text-decoration: none;
 }
