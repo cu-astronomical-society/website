@@ -13,14 +13,22 @@
 h1 {
     font-size: 2.5em;
     font-weight: bold;
-    margin-bottom: 0.5em;
+    margin-bottom: 2em;
     text-align: center;
+    margin-top: 3em;
 }
 
 h2 {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    /* font-weight: bold; */
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
 
 p {
@@ -34,3 +42,13 @@ a {
     text-decoration: underline;
 }
 
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
