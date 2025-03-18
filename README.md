@@ -2,7 +2,7 @@
 
 The Cambridge University Astronomical Society website.
 
-This is based off of the [Astro static site generator](https://astro.build).
+This is based off of the [Astro JavaScript web framework](https://astro.build).
 
 
 ## Important files and directories

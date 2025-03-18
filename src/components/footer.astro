@@ -2,57 +2,11 @@
 import "../assets/headerfooter.css";
 import cuasLogo from "../assets/cuas_logo_rect_white_transparent.svg";
 ---
-<footer class="lg:flex p-5 gap-6 items-center justify-between">
-  <div class="flex justify-between items-center">
-    <a href="/">
-      <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
-    </a>
-  </div>
-  <!-- <div class="image-wrapper">
-    <div class="image-container" id="telescope-image-container">
-      <div class="image-border"></div>
-      <img 
-        src="http://tel05.ast.cam.ac.uk/images/latest_image.jpg" 
-        alt="Latest telescope image" 
-        id="telescope-image"
-      />
-    </div>
-  </div> -->
+<footer class="lg:flex p-5 items-center justify-between">
+    <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
+    <ul class="small-text">
+      <li><a href="/about/privacy">Our privacy policy</a></li>
+      <li><a href="/about/committee">Contact the Committee</a></li>
+      <li><a href="https://github.com/cu-astronomical-society/website">Website hosted on Github</a></li>
+    </ul>
 </footer>
-
-<div class="overlay" id="overlay"></div>
-
-<script>
-  // Function to refresh the image
-  function refreshImage() {
-    const img = document.getElementById('telescope-image');
-    if (img) {
-      // Add a timestamp to prevent caching
-      const timestamp = new Date().getTime();
-      img.src = `http://tel05.ast.cam.ac.uk/images/latest_image.jpg?t=${timestamp}`;
-    }
-  }
-
-  // Set up the refresh interval (30 seconds)
-  setInterval(refreshImage, 30000);
-  
-  // Initial load
-  document.addEventListener('DOMContentLoaded', () => {
-    refreshImage();
-  });
-
-  // Toggle image size on click
-  const imageContainer = document.getElementById('telescope-image-container');
-  const overlay = document.getElementById('overlay');
-
-  imageContainer.addEventListener('click', function() {
-    this.classList.toggle('expanded');
-    overlay.classList.toggle('visible');
-  });
-
-  // Close the expanded image when clicking on the overlay
-  overlay.addEventListener('click', function() {
-    imageContainer.classList.remove('expanded');
-    this.classList.remove('visible');
-  });
-</script>
