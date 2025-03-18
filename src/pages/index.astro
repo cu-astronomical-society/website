@@ -3,6 +3,54 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+    <!-- intro -->
+    <img src="https://placeholder.pics/svg/1000x500" alt="Astro logo" class="block mx-auto w-8/10 p-10" />
+    <div class="flex">
+        <!-- Text block, 60% width -->
+        <div class="w-1/2 p-4">
+            <h2>Welcome to CUAS</h2>
+            <p>short spiel</p>
+            <p>Find out more <a href="/about">about our us</a> and <a href="/about/history">our history</a>.</p>
+        </div>
+        <!-- Image block, 40% width -->
+        <div class="w-1/2 p-4">
+            <img src="src/assets/obs_night.png" alt="Astro logo" class="block mx-auto w-full" />
+        </div>
+    </div>
 
-    
+    <!-- events -->
+
+    <h2>What we do</h2>
+    <div class="flex">
+        <div class="w-2/5 p-4">
+            <img src="src/assets/talks_photo.png" alt="Talks photo" class="block mx-auto w-full" />
+        </div>
+        <div class="w-3/5 p-4">
+            <h3>Talks</h3>
+            <p>We invite a variety of people working in astronomy to give talks to the society. The topics are taken from a wide range of areas, from pure astrophysics to the history of astronomy, observing, and much more. Talks are generally about an hour long, including questions to the speaker, and are followed by casual conversation over refreshments. Talks cost £2 or are free to members.</p>
+            <a href="/talks">Find out more</a>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="w-3/5 p-4">
+            <h3>Obs events</h3>
+            <p>ObsNights (weather permitting) are held at the Institute of Astronomy and combine both tips on practical astronomy with observing at the telescopes.</p>
+            <p>We also train people to use the telescopes in their own time through Obs demos.</p>
+            <p>There is also lots of <a href="/obs/telescopes/">fantastic equipment available</a> for member use.</p>
+            <a href="/obs">Find out more</a>
+        </div>
+        <div class="w-2/5 p-4">
+            <img src="src/assets/obs_event.png" alt="Obs photo" class="block mx-auto w-full" />
+        </div>
+    </div>
+    <div class="flex">
+        <div class="w-2/5 p-4">
+            <img src="src/assets/socials_photo.png" alt="Socials photo" class="block mx-auto w-full" />
+        </div>
+        <div class="w-3/5 p-4">
+            <h3>Social events</h3>
+            <p>The main social events are the Annual Dinner in Lent and the Garden Party in Easter. There is also a squash at the beginning of the academic year and quiz nights throughout the year. Depending on the level of interest, we organise pub meets and/or lunches.</p>
+            <a href="/socials">Find out more</a>
+        </div>
+    </div>
 </Layout>

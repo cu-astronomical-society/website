@@ -1,0 +1,29 @@
+/* Style for ordered lists with type 'A' */
+ol[type="A"] {
+    list-style-type: upper-alpha;
+    margin-left: 20px;
+}
+
+/* Style for ordered lists with type '1' */
+ol[type="1"] {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+/* Style for ordered lists with type 'i' */
+ol[type="i"] {
+    list-style-type: lower-roman;
+    margin-left: 20px;
+}
+
+/* Style for strong elements */
+strong {
+    font-weight: bold;
+}
+
+/* Style for blockquotes */
+blockquote {
+    margin-left: 20px;
+    padding-left: 10px;
+    /* border-left: 3px solid #ddd; */
+}
