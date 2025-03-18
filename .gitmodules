@@ -1,0 +1,3 @@
+[submodule "src/assets/neptune"]
+	path = src/assets/neptune
+	url = git@github.com:cu-astronomical-society/neptune.git
