@@ -7,7 +7,6 @@ import {
   DropdownItems,
   DropdownSubmenu,
 } from "astro-navbar";
-import cuasLogo from "../assets/cuas_logo_rect_white_transparent.svg";
 import "../assets/headerfooter.css";
 ---
 
@@ -15,7 +14,7 @@ import "../assets/headerfooter.css";
   <Astronav closeOnClick>
     <div class="flex justify-between items-center">
       <a href="/">
-        <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
+        <img src="/src/assets/cuas_logo_white_on_transparent_rect.svg" alt="CUAS Logo" class="h-15" />
       </a>
       <div class="block lg:hidden">
         <MenuIcon class="menu-icon w-4 h-4" />
@@ -77,7 +76,7 @@ import "../assets/headerfooter.css";
                   <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
                     <ul class="space-y-2">
                       <li><a href="/membership/" class="header-link">About membership</a></li>
-                      <li><a href="/membership/obs-demos-tests/" class="header-link">Obs tests and demos</a></li>
+                      <!-- <li><a href="/membership/obs-demos-tests/" class="header-link">Obs tests and demos</a></li> -->
                     </ul>
                   </div>
                 </div>
@@ -106,8 +105,8 @@ import "../assets/headerfooter.css";
                   <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
                     <ul class="space-y-2">
                       <li><a href="/neptune/" class="header-link">Neptune Magazine</a></li>
-                      <li><a href="/neptune/submissions/" class="header-link">Submissions</a></li>
-                      <li><a href="/neptune/astrophotography/" class="header-link">Astrophotos</a></li>
+                      <!-- <li><a href="/neptune/submissions/" class="header-link">Submissions</a></li> -->
+                      <!-- <li><a href="/neptune/astrophotography/" class="header-link">Astrophotos</a></li> -->
                     </ul>
                   </div>
                 </div>

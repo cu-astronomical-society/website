@@ -31,6 +31,32 @@ h3 {
     margin-top: 0.5em;
 }
 
+h4 {
+    font-size: 1.25em;
+    /* font-weight: bold; */
+    margin-bottom: 0.25em;
+    margin-top: 0.5em;
+}
+
+/* ul li style with dot */
+/* ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+} */
+
+/* ul, ol {
+    list-style-position: inside;
+    margin-left: 1.5em;
+} */
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
 p {
     font-size: 1em;
     margin-bottom: 0.5em;
@@ -38,7 +64,6 @@ p {
 
 /* Link styling */
 a {
-    color: #112330;
     text-decoration: underline;
 }
 
@@ -53,10 +78,10 @@ th {
     top: 0;
 }
 
-/* Ensure global styles do not conflict with constitution styles */
+/* Ensure global styles do not conflict with constitution styles
 ol[type="A"], ol[type="1"], ol[type="i"], blockquote, strong {
     margin: 0;
     padding: 0;
     font-weight: normal;
     border: none;
-}
+} */

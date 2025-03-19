@@ -1,5 +1,5 @@
 :root {
-    --header-bg-color: #112330; /* Example color */
+    --header-bg-color: #000000; /* Example color */
     --header-text-color: #ffffff; /* White color */
 }
 
@@ -28,6 +28,10 @@ header .dropdown-items .dropdown-content {
 header a, footer a {
     color: var(--header-text-color);
     text-decoration: none;
+}
+
+header ul, header li {
+    list-style-type: none;
 }
 
 
