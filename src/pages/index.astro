@@ -1,10 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import cuasLogo from '../assets/cuas_largeblack_on_white.svg';
+import obsNight from '../assets/obs_night.png';
+import talksPhoto from '../assets/talks_photo.png';
+import northumberlandOutside from '../assets/northumberland-outside.jpg';
+import northumberlandInside from '../assets/northumberland-inside.jpg';
+import socialsPhoto from '../assets/socials_photo.jpg';
 ---
 
 <Layout>
     <!-- intro -->
-    <img src="/src/assets/cuas_largeblack_on_white.svg" alt="Astro logo" class="block mx-auto w-8/10 p-10" />
+    <Image src={cuasLogo} alt="CUAS Logo" class="block mx-auto w-8/10 p-10" />
     <div class="flex">
         <!-- Text block, 60% width -->
         <div class="w-1/2 p-4">
@@ -14,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <!-- Image block, 40% width -->
         <div class="w-1/2 p-4">
-            <img src="src/assets/obs_night.png" alt="Astro logo" class="block mx-auto w-full" />
+            <Image src={obsNight} alt="Observing night" class="block mx-auto w-full" />
         </div>
     </div>
 
@@ -23,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
     <h2>What we do</h2>
     <div class="flex">
         <div class="w-2/5 p-4">
-            <img src="src/assets/talks_photo.png" alt="Talks photo" class="block mx-auto w-full" />
+            <Image src={talksPhoto} alt="Talks photo" class="block mx-auto w-full" />
         </div>
         <div class="w-3/5 p-4">
             <h3>Talks</h3>
@@ -40,15 +47,15 @@ import Layout from '../layouts/Layout.astro';
             <a href="/obs">Find out more</a>
         </div>
         <div class="w-1/5">
-            <img src="src/assets/northumberland-outside.jpg" alt="Obs photo" class="block mx-auto w-full" />
+            <Image src={northumberlandOutside} alt="Northumberland telescope outside" class="block mx-auto w-full" />
         </div>
         <div class="w-1/5">
-            <img src="src/assets/northumberland-inside.jpg" alt="Obs photo" class="block mx-auto w-full" />
+            <Image src={northumberlandInside} alt="Northumberland telescope inside" class="block mx-auto w-full" />
         </div>
     </div>
     <div class="flex">
         <div class="w-2/5 p-4">
-            <img src="src/assets/socials_photo.jpg" alt="Socials photo" class="block mx-auto w-full" />
+            <Image src={socialsPhoto} alt="Socials photo" class="block mx-auto w-full" />
         </div>
         <div class="w-3/5 p-4">
             <h3>Social events</h3>

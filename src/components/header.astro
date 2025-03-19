@@ -8,13 +8,15 @@ import {
   DropdownSubmenu,
 } from "astro-navbar";
 import "../assets/headerfooter.css";
+import { Image } from 'astro:assets';
+import cuasLogo from '../assets/cuas_logo_white_on_transparent_rect.svg';
 ---
 
 <header class="lg:flex p-5 gap-6 items-center">
   <Astronav closeOnClick>
     <div class="flex justify-between items-center">
       <a href="/">
-        <img src="/src/assets/cuas_logo_white_on_transparent_rect.svg" alt="CUAS Logo" class="h-15" />
+        <Image src={cuasLogo} alt="CUAS Logo" class="h-15" />
       </a>
       <div class="block lg:hidden">
         <MenuIcon class="menu-icon w-4 h-4" />
