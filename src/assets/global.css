@@ -2,9 +2,9 @@
 
 .hidden {
     display: none;
-  }
+}
 
-  .center {
+.center {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -90,3 +90,19 @@ ol[type="A"], ol[type="1"], ol[type="i"], blockquote, strong {
     font-weight: normal;
     border: none;
 } */
+
+/* Responsive layout for images */
+@media (max-width: 1000px) {
+    .flex {
+        flex-direction: column;
+    }
+    .w-1/2, .w-2/5, .w-3/5, .w-4/5, .w-1/5 {
+        width: 100%;
+    }
+    .flex > div {
+        order: 2;
+    }
+    .flex > div:first-child {
+        order: 1;
+    }
+}
