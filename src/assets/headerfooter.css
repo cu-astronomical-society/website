@@ -105,6 +105,16 @@ footer .image-container:hover {
 .overlay.visible {
     display: block; /* Show when visible */
 }
+
 .small-text {
     font-size: 0.65rem; /* Adjust the size as needed */
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
