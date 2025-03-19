@@ -30,10 +30,14 @@ header a, footer a {
     text-decoration: none;
 }
 
-header ul, header li {
+header ul, header li, footer li, footer ul {
     list-style-type: none;
 }
 
+.left-align {
+    margin-left: 0;
+    margin-right: auto;
+}
 
 .image-wrapper {
     position: relative;

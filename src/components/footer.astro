@@ -3,8 +3,8 @@ import "../assets/headerfooter.css";
 import { Image } from 'astro:assets';
 import cuasLogo from '../assets/cuas_logo_white_on_transparent_rect.svg';
 ---
-<footer class="lg:flex p-5 items-center justify-between">
-    <Image src={cuasLogo} alt="CUAS Logo" class="h-15" />
+<footer class="lg:flex p-5 justify-between items-center">
+    <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
     <ul class="small-text">
       <li><a href="/about/privacy">Our privacy policy</a></li>
       <li><a href="/about/committee">Contact the Committee</a></li>

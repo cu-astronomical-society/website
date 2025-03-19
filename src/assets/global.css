@@ -78,6 +78,11 @@ th {
     top: 0;
 }
 
+.left-align {
+    margin-left: 0;
+    margin-right: auto;
+}
+
 /* Ensure global styles do not conflict with constitution styles
 ol[type="A"], ol[type="1"], ol[type="i"], blockquote, strong {
     margin: 0;
