@@ -1,12 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import cuasLogo from '../assets/cuas_largeblack_on_white.svg';
-import obsNight from '../assets/obs_night.png';
-import talksPhoto from '../assets/talks_photo.png';
-import northumberlandOutside from '../assets/northumberland-outside.jpg';
-import northumberlandInside from '../assets/northumberland-inside.jpg';
-import socialsPhoto from '../assets/socials_photo.jpg';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cuasLogo from "../assets/logo/cuas_largeblack_on_white.svg";
+import obsNight from "../assets/photos/obs_night.png";
+import talksPhoto from "../assets/photos/talks_photo.png";
+import northumberlandOutside from "../assets/photos/northumberland-outside.jpg";
+import northumberlandInside from "../assets/photos/northumberland-inside.jpg";
+import socialsPhoto from "../assets/photos/socials_photo.jpg";
+import telescope from "../assets/photos/telescope.jpeg";
 ---
 
 <Layout>
@@ -17,11 +18,19 @@ import socialsPhoto from '../assets/socials_photo.jpg';
         <div class="w-1/2 p-4">
             <h2>Welcome to CUAS</h2>
             <p>short spiel</p>
-            <p>Find out more <a href="/about">about our us</a> and <a href="/about/history">our history</a>.</p>
+            <p>
+                Find out more <a href="/about">about our us</a> and <a
+                    href="/about/history">our history</a
+                >.
+            </p>
         </div>
         <!-- Image block, 40% width -->
         <div class="w-1/2 p-4">
-            <Image src={obsNight} alt="Observing night" class="block mx-auto w-full" />
+            <Image
+                src={telescope}
+                alt="Observing night"
+                class="block mx-auto w-full"
+            />
         </div>
     </div>
 
@@ -30,36 +39,70 @@ import socialsPhoto from '../assets/socials_photo.jpg';
     <h2>What we do</h2>
     <div class="flex">
         <div class="w-2/5 p-4">
-            <Image src={talksPhoto} alt="Talks photo" class="block mx-auto w-full" />
+            <Image
+                src={talksPhoto}
+                alt="Talks photo"
+                class="block mx-auto w-full"
+            />
         </div>
         <div class="w-3/5 p-4">
             <h3>Talks</h3>
-            <p>We invite a variety of people working in astronomy to give talks to the society. The topics are taken from a wide range of areas, from pure astrophysics to the history of astronomy, observing, and much more. Talks are generally about an hour long, including questions to the speaker, and are followed by casual conversation over refreshments. Talks cost £2 or are free to members.</p>
+            <p>
+                We invite a variety of people working in astronomy to give talks
+                to the society. The topics are taken from a wide range of areas,
+                from pure astrophysics to the history of astronomy, observing,
+                and much more. Talks are generally about an hour long, including
+                questions to the speaker, and are followed by casual
+                conversation over refreshments. Talks cost £2 or are free to
+                members.
+            </p>
             <a href="/talks">Find out more</a>
         </div>
     </div>
     <div class="flex">
-        <div class="w-4/5 p-4">
+        <div class="w-3/5 p-4">
             <h3>Obs events</h3>
-            <p>ObsNights (weather permitting) are held at the Institute of Astronomy and combine both tips on practical astronomy with observing at the telescopes.</p>
-            <p>We also train people to use the telescopes in their own time through Obs demos.</p>
-            <p>There is also lots of <a href="/obs/telescopes/">fantastic equipment available</a> for member use.</p>
+            <p>
+                ObsNights (weather permitting) are held at the Institute of
+                Astronomy and combine both tips on practical astronomy with
+                observing at the telescopes.
+            </p>
+            <p>
+                We also train people to use the telescopes in their own time
+                through Obs demos.
+            </p>
+            <p>
+                There is also lots of <a href="/obs/telescopes/"
+                    >fantastic equipment available</a
+                > for member use.
+            </p>
             <a href="/obs">Find out more</a>
         </div>
-        <div class="w-1/5">
-            <Image src={northumberlandOutside} alt="Northumberland telescope outside" class="block mx-auto w-full" />
-        </div>
-        <div class="w-1/5">
-            <Image src={northumberlandInside} alt="Northumberland telescope inside" class="block mx-auto w-full" />
+        <div class="w-2/5">
+            <Image
+                src={obsNight}
+                alt="Observing night"
+                class="block mx-auto w-full"
+            />
         </div>
     </div>
     <div class="flex">
         <div class="w-2/5 p-4">
-            <Image src={socialsPhoto} alt="Socials photo" class="block mx-auto w-full" />
+            <Image
+                src={socialsPhoto}
+                alt="Socials photo"
+                class="block mx-auto w-full"
+            />
         </div>
         <div class="w-3/5 p-4">
             <h3>Social events</h3>
-            <p>The main social events are the Annual Dinner in Lent and the Garden Party in Easter. There is also a squash at the beginning of the academic year and quiz nights throughout the year. Depending on the level of interest, we organise pub meets and/or lunches.</p>
+            <p>
+                The main social events are the Annual Dinner in Lent and the
+                Garden Party in Easter. There is also a squash at the beginning
+                of the academic year and quiz nights throughout the year.
+                Depending on the level of interest, we organise pub meets and/or
+                lunches.
+            </p>
             <a href="/socials">Find out more</a>
         </div>
     </div>
