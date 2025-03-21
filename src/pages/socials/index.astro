@@ -1,8 +1,60 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from "astro:assets";
+
+// Import images - you'll need to adjust these paths to match your actual asset structure
+import annualDinner76 from "../../assets/socials_photos/76_annual_dinner.jpg";
+import annualDinner75a from "../../assets/socials_photos/75_dinner1.jpg";
+import annualDinner75b from "../../assets/socials_photos/75_dinner2.jpg";
+import annualDinner50 from "../../assets/socials_photos/CUAS_1992_50thDinner.jpg";
+import gardenParty1 from "../../assets/socials_photos/garden_party18.jpg";
+import gardenParty2 from "../../assets/socials_photos/gardenparty18_2.jpg";
+import gardenParty3 from "../../assets/socials_photos/gardenparty.png";
 ---
 
 <Layout>
-
+    <h1>Socials</h1>
     
+    <p>The two main social events in the CUAS calendar are the annual dinner in Lent term and the garden party in Easter term. After each talk refreshments are provided and people often stay outside the lecture theatre to talk. Pub socials, quiz nights etc. can be organised if there is enough interest. If you have any ideas for socials, please contact a member of the committee.</p>
+
+    <h2>Annual dinners</h2>
+
+    <p>Traditionally, CUAS holds an annual dinner every Lent term which is open to all members of CUAS – both those still studying at Cambridge and those who have graduated. In Lent 2018 our annual dinner commemorated the 75th anniversary of CUAS and we were lucky enough to hear from Dr Roderick Willstrop and David Purchase about the inception of CUAS and its early history. A recording of their speeches can be accessed <a href="https://vimeo.com/259741461">here</a>.</p>
+
+    <p>We also have recordings of the addresses made during the 50th anniversary of CUAS by the late Professor Donald Lynden-Bell and Dr David Dewhirst, which can be found <a href="http://vimeo.com/258355168">here</a> and <a href="http://vimeo.com/258355627">here</a>.</p>
+
+    <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 p-4">
+            <Image src={annualDinner76} alt="76th Annual Dinner" class="w-full rounded-lg" />
+            <p class="text-center">76th Annual Dinner</p>
+        </div>
+        <div class="w-full md:w-1/2 p-4">
+            <Image src={annualDinner75a} alt="75th Annual Dinner" class="w-full rounded-lg" />
+            <p class="text-center">75th Annual Dinner</p>
+        </div>
+        <div class="w-full md:w-1/2 p-4">
+            <Image src={annualDinner75b} alt="75th Dinner with returning members" class="w-full rounded-lg" />
+            <p class="text-center">75th Dinner with returning members</p>
+        </div>
+        <div class="w-full md:w-1/2 p-4">
+            <Image src={annualDinner50} alt="50th Annual Dinner" class="w-full rounded-lg" />
+            <p class="text-center">50th Annual Dinner</p>
+        </div>
+    </div>
+
+    <h2>Garden parties</h2>
+
+    <p>Every summer CUAS hosts a garden party joint with other science societies which in the past have included CUPS, BioSoc and CUCATS. Look out for emails in Easter term about buying tickets.</p>
+
+    <div class="flex flex-wrap">
+        <div class="w-full md:w-1/3 p-4">
+            <Image src={gardenParty1} alt="Garden Party" class="w-full rounded-lg" />
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+            <Image src={gardenParty2} alt="Garden Party" class="w-full rounded-lg" />
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+            <Image src={gardenParty3} alt="Garden Party" class="w-full rounded-lg" />
+        </div>
+    </div>
 </Layout>
