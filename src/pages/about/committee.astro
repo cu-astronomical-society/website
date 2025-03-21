@@ -46,13 +46,13 @@ const currentSeniorTreasurer = seniorCommittee.find(member => member.Role === 'S
 
 <h2>Senior Committee</h2>
 
-<p>Our current President is {currentPresident.Name} and our current Senior Treasurer is {currentSeniorTreasurer.Name}.</p>
+<p>Our current President is {currentPresident.url ? <a href={currentPresident.url} target="_blank">{currentPresident.Name}</a> : currentPresident.Name} and our current Senior Treasurer is {currentSeniorTreasurer.url ? <a href={currentSeniorTreasurer.url} target="_blank">{currentSeniorTreasurer.Name}</a> : currentSeniorTreasurer.Name}.</p>
 
 <div class="container flex flex-col md:flex-row">
     <div class="flex-1 p-4">
         <h3 class="text-xl font-bold">Previous Presidents</h3>
         <ul class="list-disc list-inside">
-            {seniorCommittee.filter(member => member.Role === 'President').map(president => (
+            {seniorCommittee.filter(member => member.Role === 'President' && member.YearEnd !== 'Present').map(president => (
                 <li>{president.Name} ({president.YearStart}-{president.YearEnd})</li>
             ))}
         </ul>
@@ -60,7 +60,7 @@ const currentSeniorTreasurer = seniorCommittee.find(member => member.Role === 'S
     <div class="flex-1 p-4">
         <h3 class="text-xl font-bold">Previous Senior Treasurers</h3>
         <ul class="list-disc list-inside">
-            {seniorCommittee.filter(member => member.Role === 'Senior Treasurer').map(treasurer => (
+            {seniorCommittee.filter(member => member.Role === 'Senior Treasurer' && member.YearEnd !== 'Present').map(treasurer => (
                 <li>{treasurer.Name} ({treasurer.YearStart}-{treasurer.YearEnd})</li>
             ))}
         </ul>

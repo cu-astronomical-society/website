@@ -1,18 +1,134 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import photoFooter from '../../components/photoFooter.astro';
+import { Image } from "astro:assets";
+import PhotoFooter from '../../components/photoFooter.astro';
+
+// Import image paths (you'll need to adjust these to match your actual asset structure)
+import fredHoyle from "../../assets/history_photos/Fred_hoyle.jpg";
+import eddington from "../../assets/history_photos/Eddington1943_2.jpg";
+import patrickMoore from "../../assets/history_photos/Patrick_moore.jpg";
+import observing1980 from "../../assets/history_photos/1980.pic019.jpg";
+import northumberland1983 from "../../assets/history_photos/Northumberland_1983.jpg";
+import snowman from "../../assets/history_photos/observing_snowman2.jpg";
+import observingAlt from "../../assets/history_photos/1980.pic037.jpg";
+import termCard from "../../assets/history_photos/1943_termcard.jpg";
+import telegram from "../../assets/history_photos/20th_telegram.jpg";
+import annualDinner from "../../assets/history_photos/35th_annual_dinner.jpg";
+import annualDinnerPlan from "../../assets/history_photos/35th_annual_dinner_plan_2.jpg";
+import newsletter from "../../assets/history_photos/1984_newsletter.jpg";
+import observingAdvert from "../../assets/history_photos/observing_advert_2.jpg";
+import northumberland1980 from "../../assets/history_photos/1980_northumberland.jpg";
+import observingMap from "../../assets/history_photos/observing_map.jpg";
+import neptune1993 from "../../assets/history_photos/Neptune1993_2.jpg";
+import pulsar1980 from "../../assets/history_photos/1980_pulsar.jpg";
 ---
 
 <Layout>
-
-    <h1>Our History</h1>
+    <h1>History</h1>
     
-    <p>Founded in 2019, we have been providing the best in quality and service to our customers for over 2 years. We are proud to be a part of the community and look forward to many more years of service.</p>
+    <p>Founded in 1942, CUAS has a long and interesting history. Throughout the years, many famous astronomers have been associated with our society and indeed many CUAS members have become distinguished astronomers themselves. This website is part of an ongoing project to preserve the large archive of historic material of the society (mostly letters, event descriptions, observation records) and allow current members to enjoy and learn about the CUAS heritage. CUAS has an extensive archive, which is currently stored at the Institute of Astronomy. We are always grateful for further contributions to the archive from CUAS alumni. Some gems from the archive are shown below.</p>
     
-    <p>Our team is dedicated to providing the best in customer service and quality products. We are always looking for ways to improve and provide the best experience for our customers.</p>
+    <h2>Notable Speakers</h2>
+    <div class="flex">
+        <div class="w-3/5 p-4">
+            <p>CUAS has been privileged to host many famous astronomers as speakers throughout its history. Sir Fred Hoyle, Sir Arthur Eddington, and Sir Patrick Moore are just a few of the illustrious scientists who have given talks to the society.</p>
+            <p>These talks have covered a wide range of topics, from cosmology and stellar evolution to planetary science and the history of astronomy.</p>
+        </div>
+        <div class="w-2/5 p-4">
+            <Image src={fredHoyle} alt="Fred Hoyle publicity poster" class="block mx-auto w-full mb-4" />
+            <Image src={eddington} alt="Eddington publicity from 1943" class="block mx-auto w-full mb-4" />
+            <Image src={patrickMoore} alt="Patrick Moore publicity poster" class="block mx-auto w-full" />
+            <p class="text-center text-sm">Publicity for some of CUAS' most illustrious speakers</p>
+        </div>
+    </div>
     
-    <p>Thank you for choosing us for all of your needs. We look forward to serving you for many years to come.</p>
+    <h2>Observing History</h2>
+    <div class="flex">
+        <div class="w-2/5 p-4">
+            <Image src={observing1980} alt="Observing in 1980" class="block mx-auto w-full mb-4" />
+            <Image src={northumberland1983} alt="Northumberland telescope in 1983" class="block mx-auto w-full" />
+            <p class="text-center text-sm">Observing in the 1980s</p>
+        </div>
+        <div class="w-3/5 p-4">
+            <p>CUAS has a rich tradition of practical astronomy. Throughout its history, members have been trained to use the telescopes at the Institute of Astronomy, particularly the historic Northumberland telescope.</p>
+            <p>The society has organized regular observing nights, where members can learn practical astronomy skills and observe celestial objects through the telescopes. These events have been a cornerstone of the society's activities since its founding.</p>
+        </div>
+    </div>
     
-    <photoFooter />
+    <div class="flex">
+        <div class="w-3/5 p-4">
+            <p>Not all observing activities were strictly astronomical! Members have found many creative ways to enjoy their time together, including building astronomical snowmen.</p>
+            <p>The camaraderie developed during these observing sessions has been a vital part of the CUAS experience throughout its history.</p>
+        </div>
+        <div class="w-2/5 p-4">
+            <Image src={observingAlt} alt="Alternative observing activity" class="block mx-auto w-full mb-4" />
+            <Image src={snowman} alt="Observing snowman" class="block mx-auto w-full" />
+            <p class="text-center text-sm">Alternative observing!</p>
+        </div>
+    </div>
     
+    <h2>Historical Documents</h2>
+    <div class="flex">
+        <div class="w-2/5 p-4">
+            <Image src={termCard} alt="1943 Term Card" class="block mx-auto w-full mb-4" />
+            <Image src={telegram} alt="20th Anniversary Telegram" class="block mx-auto w-full" />
+            <p class="text-center text-sm">First ever CUAS termcard and a telegram on CUAS's 20th birthday.</p>
+        </div>
+        <div class="w-3/5 p-4">
+            <p>The CUAS archive contains many fascinating historical documents, including the society's first ever term card from 1943 and congratulatory messages received on its anniversaries.</p>
+            <p>These documents provide a valuable record of the society's activities and its place in the wider astronomical community.</p>
+        </div>
+    </div>
+    
+    <h2>Annual Dinners</h2>
+    <div class="flex">
+        <div class="w-3/5 p-4">
+            <p>The Annual Dinner is a proud CUAS tradition that continues to this day. The archive contains many records of these events, including seating plans and menus.</p>
+            <p>Several people who attended these historic dinners are still in contact with the society today, providing a living connection to CUAS's past.</p>
+        </div>
+        <div class="w-2/5 p-4">
+            <Image src={annualDinner} alt="35th Annual Dinner" class="block mx-auto w-full mb-4" />
+            <Image src={annualDinnerPlan} alt="35th Annual Dinner Plan" class="block mx-auto w-full" />
+            <p class="text-center text-sm">The Annual Dinner is a proud CUAS tradition – here is the plan and signed seating plan. Several people on the seating plan are still in contact with us today.</p>
+        </div>
+    </div>
+    
+    <h2>Publications</h2>
+    <div class="flex">
+        <div class="w-2/5 p-4">
+            <Image src={newsletter} alt="1984 Newsletter" class="block mx-auto w-full mb-4" />
+            <Image src={observingAdvert} alt="Observing Advertisement" class="block mx-auto w-full" />
+            <p class="text-center text-sm">CUAS newsletters and observing advertisements from the archives.</p>
+        </div>
+        <div class="w-3/5 p-4">
+            <p>CUAS has produced various publications over the years to inform its members about upcoming events and astronomical news. These have included newsletters, observing guides, and advertisements for society activities.</p>
+            <p>These publications provide a fascinating glimpse into the interests and priorities of CUAS members throughout the society's history.</p>
+        </div>
+    </div>
+    
+    <h2>The Observatory</h2>
+    <div class="flex">
+        <div class="w-3/5 p-4">
+            <p>The Northumberland telescope and observatory have been central to CUAS's observing activities. The archive contains many photographs and diagrams of these facilities.</p>
+            <p>Members have created hand-drawn maps and guides to help others learn about the observatory and its equipment, showing the collaborative spirit that has always been a part of CUAS.</p>
+        </div>
+        <div class="w-2/5 p-4">
+            <Image src={northumberland1980} alt="Northumberland in 1980" class="block mx-auto w-full mb-4" />
+            <Image src={observingMap} alt="Hand-drawn observing map" class="block mx-auto w-full" />
+            <p class="text-center text-sm">Exterior of Northumberland and hand-drawn map of the observatory from the 1980s.</p>
+        </div>
+    </div>
+    
+    <h2>Society Publications</h2>
+    <div class="flex">
+        <div class="w-2/5 p-4">
+            <Image src={neptune1993} alt="Neptune from 1993" class="block mx-auto w-full mb-4" />
+            <Image src={pulsar1980} alt="Pulsar from 1980" class="block mx-auto w-full" />
+            <p class="text-center text-sm">CUAS publications through the years.</p>
+        </div>
+        <div class="w-3/5 p-4">
+            <p>CUAS used to have two newsletters: a weekly edition of Neptune and an annual publication called Pulsar. These contained articles by members, news about society events, and information about astronomical phenomena.</p>
+            <p>Neptune continues as the society's publication to this day, connecting current members to this aspect of CUAS history.</p>
+        </div>
+    </div>
 </Layout>
