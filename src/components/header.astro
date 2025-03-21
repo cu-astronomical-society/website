@@ -1,184 +1,147 @@
 ---
-import {
-  Astronav,
-  MenuItems,
-  MenuIcon,
-  Dropdown,
-  DropdownItems,
-  DropdownSubmenu,
-} from "astro-navbar";
-import "../assets/headerfooter.css";
 import { Image } from 'astro:assets';
 import cuasLogo from '../assets/logo/cuas_logo_white_on_transparent_rect.svg';
 ---
 
-<header class="lg:flex p-5 gap-6 items-center full-width">
-  <Astronav closeOnClick>
-    <div class="flex justify-between items-center">
-      <a href="/">
-        <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
-      </a>
-      <div class="block lg:hidden">
-        <MenuIcon class="menu-icon w-4 h-4" />
-      </div>
-    </div>
-    <MenuItems class="hidden lg:flex items-center lg:!block">
-      <ul class="flex flex-col lg:flex-row lg:gap-5 items-center">
-        <li class="flex-shrink-0"><a href="/">Home</a></li>
-        <li class="flex-shrink-0">
-          <Dropdown class="group">
-            <button class="dropdown-button flex items-center">
-              <span>About</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="3"
-                stroke="currentColor"
-                class="w-3 h-3 mt-0.5 group-open:rotate-180">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-              </svg>
-            </button>
-            <DropdownItems class="dropdown-items relative whitespace-nowrap">
-              <div class="absolute top-0">
-                <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
-                  <ul class="space-y-2">
-                    <li><a href="/about/" class="header-link">About CUAS</a></li>
-                    <li><a href="/about/committee/" class="header-link">Committee</a></li>
-                    <li><a href="/about/constitution/" class="header-link">Constitution</a></li>
-                    <li><a href="/about/history/" class="header-link">History</a></li>
-                    <!-- <li><a href="/about/sponsorship/" class="header-link">Sponsorship</a></li> -->
-                  </ul>
-                </div>
-              </div>
-            </DropdownItems>
-          </Dropdown>
-        </li>
-        <li class="flex-shrink-0">
-            <Dropdown class="group">
-              <button class="dropdown-button flex items-center">
-                <span>Membership</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-3 h-3 mt-0.5 group-open:rotate-180">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </button>
-              <DropdownItems class="dropdown-items relative whitespace-nowrap">
-                <div class="absolute top-0">
-                  <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
-                    <ul class="space-y-2">
-                      <li><a href="/membership/" class="header-link">Join CUAS</a></li>
-                      <!-- <li><a href="/membership/obs-demos-tests/" class="header-link">Obs tests and demos</a></li> -->
-                    </ul>
-                  </div>
-                </div>
-              </DropdownItems>
-            </Dropdown>
-          </li>
-          <li class="flex-shrink-0">
-            <Dropdown class="group">
-              <button class="dropdown-button flex items-center">
-                <span>Neptune Magazine</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-3 h-3 mt-0.5 group-open:rotate-180">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                </svg>
-              </button>
-              <DropdownItems class="dropdown-items relative whitespace-nowrap">
-                <div class="absolute top-0">
-                  <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
-                    <ul class="space-y-2">
-                      <li><a href="/neptune/" class="header-link">Neptune Magazine</a></li>
-                      <!-- <li><a href="/neptune/submissions/" class="header-link">Submissions</a></li> -->
-                      <!-- <li><a href="/neptune/astrophotography/" class="header-link">Astrophotos</a></li> -->
-                    </ul>
-                  </div>
-                </div>
-              </DropdownItems>
-            </Dropdown>
-          </li>
-          <li class="flex-shrink-0">
-            <Dropdown class="group">
-                <button class="dropdown-button flex items-center">
-                    <span>Observing</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="3"
-                      stroke="currentColor"
-                      class="w-3 h-3 mt-0.5 group-open:rotate-180">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                  </button>
-              <DropdownItems class="dropdown-items relative whitespace-nowrap">
-                <div class="absolute top-0">
-                  <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
-                    <ul class="space-y-2">
-                      <li><a href="/obs/" class="header-link">Observing at CUAS</a></li>
-                      <li><a href="/obs/guides/" class="header-link">Guides</a></li>
-                      <li><a href="/obs/telescopes/" class="header-link">Telescopes and equipment</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </DropdownItems>
-            </Dropdown>
-          </li>
-          <li class="flex-shrink-0">
-            <Dropdown class="group">
-                <button class="dropdown-button flex items-center">
-                    <span>Talks</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="3"
-                      stroke="currentColor"
-                      class="w-3 h-3 mt-0.5 group-open:rotate-180">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                  </button>
-              <DropdownItems class="dropdown-items relative whitespace-nowrap">
-                <div class="absolute top-0">
-                  <div class="dropdown-content inline-block p-2 rounded shadow-lg whitespace-nowrap">
-                    <ul class="space-y-2">
-                      <li><a href="/talks/" class="header-link">Talks at CUAS</a></li>
-                      <li><a href="/talks/upcoming" class="header-link">Upcoming talks</a></li>
-                      <li><a href="/talks/previous/" class="header-link">Previous talks</a></li>
-                      <li><a href="/talks/recordings/" class="header-link">Recorded talks</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </DropdownItems>
-            </Dropdown>
-          </li>
-          <li class="flex-shrink-0"><a href="/socials/" class="header-link">Socials</a></li> 
-      </ul>
-    </MenuItems>
-  </Astronav>
+<header class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-logo">
+      <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
+    </a>
+    
+    <button class="navbar-toggle" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    
+    <ul class="navbar-menu">
+      <li class="navbar-item">
+        <a href="/" class="navbar-link">Home</a>
+      </li>
+      
+      <li class="navbar-item">
+        <div class="navbar-link dropdown-toggle">
+          <span>About</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <div class="dropdown-menu">
+          <a href="/about/" class="dropdown-item">About CUAS</a>
+          <a href="/about/committee/" class="dropdown-item">Committee</a>
+          <a href="/about/constitution/" class="dropdown-item">Constitution</a>
+          <a href="/about/history/" class="dropdown-item">History</a>
+        </div>
+      </li>
+      
+      <li class="navbar-item">
+        <div class="navbar-link dropdown-toggle">
+          <span>Membership</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <div class="dropdown-menu">
+          <a href="/membership/" class="dropdown-item">Join CUAS</a>
+        </div>
+      </li>
+      
+      <li class="navbar-item">
+        <div class="navbar-link dropdown-toggle">
+          <span>Neptune Magazine</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <div class="dropdown-menu">
+          <a href="/neptune/" class="dropdown-item">Neptune Magazine</a>
+        </div>
+      </li>
+      
+      <li class="navbar-item">
+        <div class="navbar-link dropdown-toggle">
+          <span>Observing</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <div class="dropdown-menu">
+          <a href="/obs/" class="dropdown-item">Observing at CUAS</a>
+          <a href="/obs/guides/" class="dropdown-item">Guides</a>
+          <a href="/obs/telescopes/" class="dropdown-item">Telescopes and equipment</a>
+        </div>
+      </li>
+      
+      <li class="navbar-item">
+        <div class="navbar-link dropdown-toggle">
+          <span>Talks</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <div class="dropdown-menu">
+          <a href="/talks/" class="dropdown-item">Talks at CUAS</a>
+          <a href="/talks/upcoming/" class="dropdown-item">Upcoming talks</a>
+          <a href="/talks/previous/" class="dropdown-item">Previous talks</a>
+          <a href="/talks/recordings/" class="dropdown-item">Recorded talks</a>
+        </div>
+      </li>
+      
+      <li class="navbar-item">
+        <a href="/socials/" class="navbar-link">Socials</a>
+      </li>
+    </ul>
+  </div>
 </header>
+
+<script>
+  // Toggle mobile menu
+  const navbarToggle = document.querySelector('.navbar-toggle');
+  const navbarMenu = document.querySelector('.navbar-menu');
+  
+  navbarToggle.addEventListener('click', () => {
+    navbarMenu.classList.toggle('show');
+  });
+  
+  // Toggle dropdowns
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      // Close all other dropdowns on desktop
+      if (window.innerWidth >= 768) {
+        dropdownToggles.forEach(otherToggle => {
+          if (otherToggle !== toggle) {
+            otherToggle.classList.remove('active');
+            otherToggle.nextElementSibling.classList.remove('show');
+          }
+        });
+      }
+      
+      // Toggle current dropdown
+      toggle.classList.toggle('active');
+      toggle.nextElementSibling.classList.toggle('show');
+      
+      e.stopPropagation();
+    });
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', () => {
+    dropdownToggles.forEach(toggle => {
+      toggle.classList.remove('active');
+      toggle.nextElementSibling.classList.remove('show');
+    });
+  });
+  
+  // Prevent dropdown from closing when clicking inside
+  const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+  dropdownMenus.forEach(menu => {
+    menu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
+</script>

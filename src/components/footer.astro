@@ -3,11 +3,17 @@ import "../assets/headerfooter.css";
 import { Image } from 'astro:assets';
 import cuasLogo from '../assets/logo/cuas_logo_white_on_transparent_rect.svg';
 ---
-<footer class="lg:flex p-5 justify-between items-center full-width">
-    <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
-    <ul class="small-text">
+
+<footer class="navbar">
+  <div class="navbar-container footer-content">
+    <a href="/" class="navbar-logo">
+      <img src={cuasLogo.src} alt="CUAS Logo" class="h-15" />
+    </a>
+    
+    <ul class="footer-links small-text">
       <li><a href="/about/privacy">Our privacy policy</a></li>
       <li><a href="/about/committee">Contact the Committee</a></li>
       <li><a href="https://github.com/cu-astronomical-society/website">Website hosted on Github</a></li>
     </ul>
+  </div>
 </footer>
