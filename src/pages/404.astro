@@ -1,7 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cuasLogo from "../assets/logo/cuas_largeblack_on_white.svg";
 ---
 
 <Layout>
-<h1>404</h1>
+    <div class="text-center p-10">
+        <h1 class="text-4xl font-bold mb-4" style="margin-bottom: 0em; margin-top: 1em;">404 - Page Not Found</h1>
+        <Image src={cuasLogo} alt="CUAS Logo" class="block mx-auto w-7/10" />
+        <p class="text-lg mb-8">Oops! Looks like you're pointing the scope at empty space.</p>
+        <a href="/" class="btn">Go back to the homepage</a>
+    </div>
 </Layout>

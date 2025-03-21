@@ -2,7 +2,6 @@
 layout: ../../../layouts/Layout.astro
 ---
 
-
 # Binoculars Usage Guide
 
 Binoculars are an excellent tool for astronomy, offering wide fields of view and ease of use. They're perfect for beginners and experienced observers alike, providing wonderful views of star clusters, the Moon, and even some nebulae and galaxies.
@@ -15,7 +14,7 @@ CUAS has several pairs of binoculars available for member use:
 - 15×70 binoculars (larger aperture for deeper sky viewing)
 - 20×80 binoculars (may require tripod mounting)
 
-The numbers indicate magnification × aperture in millimeters. For example, 10×50 means 10x magnification with 50mm objective lenses.
+The numbers indicate magnification × aperture in millimetres. For example, 10×50 means 10x magnification with 50mm objective lenses.
 
 ## Getting Started
 
@@ -35,12 +34,12 @@ The numbers indicate magnification × aperture in millimeters. For example, 10×
 
 2. **Focus Adjustment**:
    - Cover the right objective lens or close your right eye
-   - Look at a distant object and adjust the center focus wheel until sharp with your left eye
+   - Look at a distant object and adjust the centre focus wheel until sharp with your left eye
    - Cover the left objective lens or close your left eye
    - Adjust the diopter ring (usually on right eyepiece) until sharp with your right eye
-   - Now both eyes should be in focus when using the center wheel
+   - Now both eyes should be in focus when using the centre wheel
 
-3. **Stabilization**:
+3. **Stabilisation**:
    - For 10×50 binoculars: Brace elbows against your body or lean against a stable object
    - For larger binoculars: Consider using a tripod with a binocular adapter
    - Alternatively, lie on your back on a reclining chair for extended viewing comfort
@@ -73,7 +72,7 @@ The numbers indicate magnification × aperture in millimeters. For example, 10×
   - Blow off dust with air blower
   - If needed, use lens cloth or lens tissue with proper cleaning solution
   - Never directly apply cleaning fluid to lenses
-  - Clean in circular motions from center outward
+  - Clean in circular motions from centre outward
 - **Avoid Touching Lenses**: Fingerprints are difficult to clean
 - **Temperature Acclimation**: Allow binoculars to adjust to outside temperature before use
 
