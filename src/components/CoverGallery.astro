@@ -15,14 +15,14 @@ const sortedImages = [...coverImages].map(cover => {
         academicYear = `${startYear}-${endYear}`;
     }
     
-    // Generate the PDF filename - PDFs are now in public directory
-    const pdfFilename = fileName.replace('.png', '.pdf');
+    // Extract just the year part without Neptune prefix for the PDF URL
+    const yearPart = academicYear ? academicYear : "unknown";
     
     return {
         ...cover,
         academicYear,
         sortKey: yearMatch ? yearMatch[1] + yearMatch[2] : "0", // For sorting
-        pdfUrl: `/neptune/pdfs/${pdfFilename}` // Public URL for the PDF (already correct)
+        pdfUrl: `/neptune/pdfs/Neptune${yearPart}.pdf` // Construct a clean URL without hashing
     };
 }).sort((a, b) => {
     return b.sortKey.localeCompare(a.sortKey); // Sort by year descending

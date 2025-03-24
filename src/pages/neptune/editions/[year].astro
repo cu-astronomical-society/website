@@ -10,7 +10,7 @@ const { year } = Astro.params;
 // Format the year for display (e.g., "2023-24")
 const formattedYear = year;
 
-// Construct the path to the PDF file - updated to public directory
+// Construct a clean path to the PDF file that won't be affected by hashing
 const pdfPath = `/neptune/pdfs/Neptune${year}.pdf`;
 
 // Get cover image for this edition - keep covers in src if they're still there
