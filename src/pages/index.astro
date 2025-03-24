@@ -8,16 +8,24 @@ import northumberlandOutside from "../assets/photos/northumberland-outside.jpg";
 import northumberlandInside from "../assets/photos/northumberland-inside.jpg";
 import socialsPhoto from "../assets/photos/socials_photo.jpg";
 import telescope from "../assets/photos/telescope.jpeg";
+import Logo from "../layouts/homepageLogo/logo.astro";
 ---
 
 <Layout>
     <!-- intro -->
+    <!-- Comment out the static logo to only use the Hype animation -->
     <Image src={cuasLogo} alt="CUAS Logo" class="block mx-auto w-8/10 p-10" />
-    <div class="flex">
+    
+    <!-- Use the Logo component with proper capitalization
+    <div class="logo-container">
+        <Logo />
+    </div> -->
+    
+    <div class="flex flex-col md:flex-row">
         <!-- Text block, 60% width -->
-        <div class="w-1/2 p-4">
+        <div class="w-full md:w-1/2 p-4 max-w-full">
             <h2>Welcome to CUAS</h2>
-            <p>short spiel</p>
+            <p>Founded in 1942, the Cambridge University Astronomical Society brings together students and university members passionate about the cosmos. We offer regular talks from leading astronomers, observation nights with historic telescopes, equipment training, and social events throughout the academic year.</p>
             <p>
                 Find out more <a href="/about">about our us</a> and <a
                     href="/about/history">our history</a
@@ -25,7 +33,7 @@ import telescope from "../assets/photos/telescope.jpeg";
             </p>
         </div>
         <!-- Image block, 40% width -->
-        <div class="w-1/2 p-4">
+        <div class="w-full md:w-1/2 p-4 max-w-full">
             <Image
                 src={telescope}
                 alt="Observing night"
@@ -37,15 +45,15 @@ import telescope from "../assets/photos/telescope.jpeg";
     <!-- events -->
 
     <h2>What we do</h2>
-    <div class="flex">
-        <div class="w-2/5 p-4">
+    <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-2/5 p-4 order-2 md:order-1">
             <Image
                 src={talksPhoto}
                 alt="Talks photo"
                 class="block mx-auto w-full"
             />
         </div>
-        <div class="w-3/5 p-4">
+        <div class="w-full md:w-3/5 p-4 order-1 md:order-2">
             <h3>Talks</h3>
             <p>
                 We invite a variety of people working in astronomy to give talks
@@ -59,8 +67,8 @@ import telescope from "../assets/photos/telescope.jpeg";
             <a href="/talks">Find out more</a>
         </div>
     </div>
-    <div class="flex">
-        <div class="w-3/5 p-4">
+    <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-3/5 p-4 order-1">
             <h3>Obs events</h3>
             <p>
                 ObsNights (weather permitting) are held at the Institute of
@@ -78,7 +86,7 @@ import telescope from "../assets/photos/telescope.jpeg";
             </p>
             <a href="/obs">Find out more</a>
         </div>
-        <div class="w-2/5">
+        <div class="w-full md:w-2/5 order-2">
             <Image
                 src={obsNight}
                 alt="Observing night"
@@ -86,15 +94,15 @@ import telescope from "../assets/photos/telescope.jpeg";
             />
         </div>
     </div>
-    <div class="flex">
-        <div class="w-2/5 p-4">
+    <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-2/5 p-4 order-2 md:order-1">
             <Image
                 src={socialsPhoto}
                 alt="Socials photo"
                 class="block mx-auto w-full"
             />
         </div>
-        <div class="w-3/5 p-4">
+        <div class="w-full md:w-3/5 p-4 order-1 md:order-2">
             <h3>Social events</h3>
             <p>
                 The main social events are the Annual Dinner in Lent and the
@@ -108,3 +116,12 @@ import telescope from "../assets/photos/telescope.jpeg";
     </div>
     <h2></h2>
 </Layout>
+
+<style>
+.logo-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+</style>

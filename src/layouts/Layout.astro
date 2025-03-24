@@ -16,10 +16,12 @@ import '../assets/global.css';
 
 	<body>
 		<Header />
-		<div class="content">
-			<slot />
+		<div class="content-container">
+			<div class="content">
+				<slot />
+			</div>
+			<span class="flex-spacer"></span>
 		</div>
-		<span class="flex-spacer"></span>
 		<Footer />
 	</body>
 </html>
@@ -38,5 +40,18 @@ import '../assets/global.css';
 	}
 	.flex-spacer {
 		flex-grow: 1;
+	}
+	.content-container {
+		width: 100%;
+		max-width: calc(100vh * 16/9); /* 16:9 aspect ratio based on viewport height */
+		margin: 0 auto; /* Center the container */
+		box-sizing: border-box;
+		padding: 0 1rem; /* Add some padding for small screens */
+	}
+
+	@media (max-width: calc(100vh * 16/9)) {
+		.content-container {
+			padding: 0 1rem; /* Maintain padding on smaller screens */
+		}
 	}
 </style>

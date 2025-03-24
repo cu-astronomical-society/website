@@ -23,7 +23,7 @@ const sortedImages = [...coverImages].map(cover => {
         ...cover,
         academicYear,
         sortKey: yearMatch ? yearMatch[1] + yearMatch[2] : "0", // For sorting
-        pdfUrl: `/src/assets/neptune/pdfs/${pdfFilename}` // Public URL for the PDF
+        pdfUrl: `/neptune/pdfs/${pdfFilename}` // Public URL for the PDF
     };
 }).sort((a, b) => {
     return b.sortKey.localeCompare(a.sortKey); // Sort by year descending
