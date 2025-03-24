@@ -1,5 +1,5 @@
 ---
-// Get all PNG files in the specified directory
+// Get all PNG files in the specified directory - cover images are still in src
 const coverImages = await Astro.glob('/src/assets/neptune/covers/*.png');
 
 // Extract academic year from filename and sort images in descending order
@@ -15,15 +15,14 @@ const sortedImages = [...coverImages].map(cover => {
         academicYear = `${startYear}-${endYear}`;
     }
     
-    // Generate the PDF path based on the image filename
+    // Generate the PDF filename - PDFs are now in public directory
     const pdfFilename = fileName.replace('.png', '.pdf');
-    const pdfPath = `/src/assets/neptune/pdfs/${pdfFilename}`;
     
     return {
         ...cover,
         academicYear,
         sortKey: yearMatch ? yearMatch[1] + yearMatch[2] : "0", // For sorting
-        pdfUrl: `/neptune/pdfs/${pdfFilename}` // Public URL for the PDF
+        pdfUrl: `/neptune/pdfs/${pdfFilename}` // Public URL for the PDF (already correct)
     };
 }).sort((a, b) => {
     return b.sortKey.localeCompare(a.sortKey); // Sort by year descending

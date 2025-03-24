@@ -1,6 +1,8 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import PDFViewer from '../../../components/PDFViewer.astro';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Get the year parameter from the URL
 const { year } = Astro.params;
@@ -8,24 +10,31 @@ const { year } = Astro.params;
 // Format the year for display (e.g., "2023-24")
 const formattedYear = year;
 
-// Construct the path to the PDF file
-const pdfPath = `/src/assets/neptune/pdfs/Neptune${year}.pdf`;
+// Construct the path to the PDF file - updated to public directory
+const pdfPath = `/neptune/pdfs/Neptune${year}.pdf`;
 
-// Get cover image for this edition
+// Get cover image for this edition - keep covers in src if they're still there
 const coverImages = await Astro.glob('/src/assets/neptune/covers/*.png');
 const coverImage = coverImages.find(cover => {
     const fileName = cover.default.src.split('/').pop();
     return fileName.includes(year);
 });
 
-
 export async function getStaticPaths() {
-    // Get all PDF files from the pdfs directory
-    const editions = await Astro.glob('/src/assets/neptune/pdfs/*.pdf');
+    // Read PDF files from the public directory instead of using Astro.glob
+    const publicPdfsDir = path.join(process.cwd(), 'public/neptune/pdfs');
     
-    return editions.map(edition => {
-        const filePath = edition.default;
-        const fileName = filePath.split('/').pop();
+    // Check if directory exists to avoid errors
+    if (!fs.existsSync(publicPdfsDir)) {
+        console.warn(`Directory not found: ${publicPdfsDir}`);
+        return [];
+    }
+    
+    // Get all PDF files from the public directory
+    const pdfFiles = fs.readdirSync(publicPdfsDir)
+        .filter(file => file.endsWith('.pdf'));
+    
+    return pdfFiles.map(fileName => {
         // Extract year from filename (e.g., "Neptune2023-24.pdf" → "2023-24")
         const matches = fileName.match(/Neptune(\d{4}-\d{2})\.pdf/);
         if (!matches) return null;
