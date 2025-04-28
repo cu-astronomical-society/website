@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
-    "astro": "^5.5.2",
+    "astro": "^5.7.7",
     "astro-navbar": "^2.3.9",
     "papaparse": "^5.5.2",
     "solid-js": "^1.9.5",
