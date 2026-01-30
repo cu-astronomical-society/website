@@ -1,0 +1,4 @@
+[submodule "public/neptune"]
+	path = public/neptune
+	url = https://github.com/cu-astronomical-society/neptune.git
+	branch = main
