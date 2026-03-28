@@ -1,19 +1,28 @@
-/* Style for ordered lists with type 'A' */
-ol[type="A"] {
-    list-style-type: upper-alpha;
-    margin-left: 20px;
+h3.print_only {
+    text-align: center;
 }
 
-/* Style for ordered lists with type '1' */
-ol[type="1"] {
+h4.print_only {
+    text-align: center;
+}
+
+/* Style for top-level list items, have to be numbered with letters manually */
+.constitution-content h4 {
+    margin-top: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+/* Style for level 2 list items */
+.constitution-content h5 {
     list-style-type: decimal;
-    margin-left: 20px;
+    margin-top: 0.5rem;
 }
 
-/* Style for ordered lists with type 'i' */
-ol[type="i"] {
+/* Style for level 3 list items */
+.constitution-content>ol {
     list-style-type: lower-roman;
-    margin-left: 20px;
+    margin-left: 4ch;
 }
 
 /* Style for strong elements */
@@ -23,7 +32,77 @@ strong {
 
 /* Style for blockquotes */
 blockquote {
-    margin-left: 20px;
-    padding-left: 10px;
-    /* border-left: 3px solid #ddd; */
+    margin-left: 4ch;
+    /* padding-left: 2ch;
+    border-left: 3px solid #ddd; */
+}
+
+.toc {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.toc a {
+    text-decoration: none;
+}
+
+.toc-section {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.toc-clause {
+    margin-left: 4ch;
+}
+
+.print_only {
+    display: none;
+}
+
+@media print {
+
+    @page {
+        @bottom-center {
+            content: counter(page);
+        }
+    }
+
+    /*@page :first {
+        @bottom-center {
+            content: "";
+        }
+    }*/
+
+    header,
+    footer,
+    .do_not_print {
+        display: none !important;
+    }
+
+    .print_only {
+        display: block !important;
+    }
+
+    .toc {
+        page-break-after: always;
+        break-after: always;
+    }
+
+    /* Tell the printing routine to not break clauses across pages */
+    .constitution-content>ol>li {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* And keep headings attached to the first item after them */
+    .constitution-content h4,
+    .constitution-content h5 {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
 }
