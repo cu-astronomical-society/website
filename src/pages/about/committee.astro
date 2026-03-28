@@ -121,8 +121,7 @@ const currentSeniorTreasurer = seniorCommittee.find(
                         )
                         .map((president) => (
                             <li>
-                                {president.Name} ({president.YearStart}-
-                                {president.YearEnd})
+                                {`${president.Name} (${president.YearStart}-${president.YearEnd})`}
                             </li>
                         ))
                 }
@@ -140,8 +139,7 @@ const currentSeniorTreasurer = seniorCommittee.find(
                         )
                         .map((treasurer) => (
                             <li>
-                                {treasurer.Name} ({treasurer.YearStart}-
-                                {treasurer.YearEnd})
+                                {`${treasurer.Name} (${treasurer.YearStart}-${treasurer.YearEnd})`}
                             </li>
                         ))
                 }
@@ -186,14 +184,14 @@ const currentSeniorTreasurer = seniorCommittee.find(
                                     year.Other10,
                                 ]
                                     .filter(
-                                        (role) =>
-                                            role !== null &&
-                                            role !== undefined &&
-                                            role.trim() !== "",
+                                        (person) =>
+                                            person !== null &&
+                                            person !== undefined &&
+                                            person.trim() !== "",
                                     )
-                                    .map((role) => (
+                                    .map((person) => (
                                         <>
-                                            {role}
+                                            {person}
                                             <br />
                                         </>
                                     ))}
