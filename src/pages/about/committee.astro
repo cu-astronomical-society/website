@@ -71,7 +71,9 @@ const currentSeniorTreasurer = seniorCommittee.find(
                             <td>{member.Name}</td>
                             <td>{member.ID}</td>
                             <td>
-                                {member.College} - {member.Course}
+                                {[member.College, member.Course]
+                                    .filter(Boolean)
+                                    .join(" - ")}
                             </td>
                         </tr>
                     ))
@@ -85,17 +87,21 @@ const currentSeniorTreasurer = seniorCommittee.find(
     <p>
         Our current President is {
             currentPresident.url ? (
-                <a href={currentPresident.url} target="_blank">
-                    {currentPresident.Name}
-                </a>
+                <a
+                    href={currentPresident.url}
+                    target="_blank"
+                    set:text={currentSeniorTreasurer.Name}
+                />
             ) : (
                 currentPresident.Name
             )
         } and our current Senior Treasurer is {
             currentSeniorTreasurer.url ? (
-                <a href={currentSeniorTreasurer.url} target="_blank">
-                    {currentSeniorTreasurer.Name}
-                </a>
+                <a
+                    href={currentSeniorTreasurer.url}
+                    target="_blank"
+                    set:text={currentSeniorTreasurer.Name}
+                />
             ) : (
                 currentSeniorTreasurer.Name
             )
