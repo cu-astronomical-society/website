@@ -1,107 +1,201 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { readFileSync } from 'fs';
-import Papa from 'papaparse';
+import Layout from "../../layouts/Layout.astro";
+import { readFileSync } from "fs";
+import Papa from "papaparse";
 
 const { parse } = Papa;
 
-const [currentCommittee, seniorCommittee, historicCommittee] = ['current.csv', 'senior.csv', 'historic.csv'].map(file => parse(readFileSync(`src/assets/committee/${file}`, 'utf8'), { header: true }).data);
+const [currentCommittee, seniorCommittee, historicCommittee] = [
+    "current.csv",
+    "senior.csv",
+    "historic.csv",
+].map(
+    (file) =>
+        parse(readFileSync(`src/assets/committee/${file}`, "utf8"), {
+            header: true,
+        }).data,
+);
 
-const currentPresident = seniorCommittee.find(member => member.Role === 'President' && member.YearEnd === 'Present');
-const currentSeniorTreasurer = seniorCommittee.find(member => member.Role === 'Senior Treasurer' && member.YearEnd === 'Present');
+const currentPresident = seniorCommittee.find(
+    (member) => member.Role === "President" && member.YearEnd === "Present",
+);
+const currentSeniorTreasurer = seniorCommittee.find(
+    (member) =>
+        member.Role === "Senior Treasurer" && member.YearEnd === "Present",
+);
 ---
 
 <Layout>
+    <h1>Committee</h1>
 
-<h1>Committee</h1>
+    <p>
+        The committee is composed of university students and is responsible for
+        the day to day running of the society. Please contact them if you have
+        any questions. At the end of Lent term there is an opportunity to stand
+        for next year’s committee. If you are interested please contact a member
+        of the committee.
+    </p>
 
-<p>The committee is composed of university students and is responsible for the day to day running of the society. Please contact them if you have any questions. At the end of Lent term there is an opportunity to stand for next year’s committee. If you are interested please contact a member of the committee.</p>
+    <p>
+        To contact individual committee members via email, add “@cam.ac.uk”
+        after the combination of letters and numbers given. If you encounter
+        problems contacting the committee members, please contact the webmaster
+        directly.
+    </p>
 
-<p>To contact individual committee members via email, add “@cam.ac.uk” after the combination of letters and numbers given. If you encounter problems contacting the committee members, please contact the webmaster directly.</p>
+    <p>
+        <strong
+            >The best way to contact the Obs Secretaries is via their shared
+            email: <a href="mailto:cuasobserv@gmail.com">cuasobserv@gmail.com</a
+            ></strong
+        >
+    </p>
 
-<p><strong>The best way to contact the Obs Secretaries is via their shared email: <a href="mailto:cuasobserv@gmail.com">cuasobserv@gmail.com</a></strong></p>
+    <h2>Current Committee</h2>
 
-<h2>Current Committee</h2>
-
-<div class="container">
-    <table>
-        <thead>
-            <tr>
-                <th>Position</th>
-                <th>Name</th>
-                <th>@cam.ac.uk</th>
-                <th>College and Course</th>
-            </tr>
-        </thead>
-        <tbody>
-            {currentCommittee.map(member => (
+    <div class="container">
+        <table>
+            <thead>
                 <tr>
-                    <td>{member.Position}</td>
-                    <td>{member.Name}</td>
-                    <td>{member.ID}</td>
-                    <td>{member.College} - {member.Course}</td>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>@cam.ac.uk</th>
+                    <th>College and Course</th>
                 </tr>
-            ))}
-        </tbody>
-    </table>
-</div>
-
-<h2>Senior Committee</h2>
-
-<p>Our current President is {currentPresident.url ? <a href={currentPresident.url} target="_blank">{currentPresident.Name}</a> : currentPresident.Name} and our current Senior Treasurer is {currentSeniorTreasurer.url ? <a href={currentSeniorTreasurer.url} target="_blank">{currentSeniorTreasurer.Name}</a> : currentSeniorTreasurer.Name}.</p>
-
-<div class="container flex flex-col md:flex-row">
-    <div class="flex-1 p-4">
-        <h3 class="text-xl font-bold">Previous Presidents</h3>
-        <ul class="list-disc list-inside">
-            {seniorCommittee.filter(member => member.Role === 'President' && member.YearEnd !== 'Present').map(president => (
-                <li>{president.Name} ({president.YearStart}-{president.YearEnd})</li>
-            ))}
-        </ul>
+            </thead>
+            <tbody>
+                {
+                    currentCommittee.map((member) => (
+                        <tr>
+                            <td>{member.Position}</td>
+                            <td>{member.Name}</td>
+                            <td>{member.ID}</td>
+                            <td>
+                                {member.College} - {member.Course}
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
     </div>
-    <div class="flex-1 p-4">
-        <h3 class="text-xl font-bold">Previous Senior Treasurers</h3>
-        <ul class="list-disc list-inside">
-            {seniorCommittee.filter(member => member.Role === 'Senior Treasurer' && member.YearEnd !== 'Present').map(treasurer => (
-                <li>{treasurer.Name} ({treasurer.YearStart}-{treasurer.YearEnd})</li>
-            ))}
-        </ul>
+
+    <h2>Senior Committee</h2>
+
+    <p>
+        Our current President is {
+            currentPresident.url ? (
+                <a href={currentPresident.url} target="_blank">
+                    {currentPresident.Name}
+                </a>
+            ) : (
+                currentPresident.Name
+            )
+        } and our current Senior Treasurer is {
+            currentSeniorTreasurer.url ? (
+                <a href={currentSeniorTreasurer.url} target="_blank">
+                    {currentSeniorTreasurer.Name}
+                </a>
+            ) : (
+                currentSeniorTreasurer.Name
+            )
+        }.
+    </p>
+
+    <div class="container flex flex-col md:flex-row">
+        <div class="flex-1 p-4">
+            <h3 class="text-xl font-bold">Previous Presidents</h3>
+            <ul class="list-disc list-inside">
+                {
+                    seniorCommittee
+                        .filter(
+                            (member) =>
+                                member.Role === "President" &&
+                                member.YearEnd !== "Present",
+                        )
+                        .map((president) => (
+                            <li>
+                                {president.Name} ({president.YearStart}-
+                                {president.YearEnd})
+                            </li>
+                        ))
+                }
+            </ul>
+        </div>
+        <div class="flex-1 p-4">
+            <h3 class="text-xl font-bold">Previous Senior Treasurers</h3>
+            <ul class="list-disc list-inside">
+                {
+                    seniorCommittee
+                        .filter(
+                            (member) =>
+                                member.Role === "Senior Treasurer" &&
+                                member.YearEnd !== "Present",
+                        )
+                        .map((treasurer) => (
+                            <li>
+                                {treasurer.Name} ({treasurer.YearStart}-
+                                {treasurer.YearEnd})
+                            </li>
+                        ))
+                }
+            </ul>
+        </div>
     </div>
-</div>
 
-<h2>Past committees</h2>
+    <h2>Past committees</h2>
 
-<div class="container">
-    <table>
-        <thead>
-            <tr>
-                <th>Year</th>
-                <th>Chair</th>
-                <th>Secretary</th>
-                <th>Treasurer</th>
-                <th>Other Members</th>
-            </tr>
-        </thead>
-        <tbody>
-            {historicCommittee.map(year => (
+    <div class="container">
+        <table>
+            <thead>
                 <tr>
-                    <td>{year.YearStart}-{year.YearEnd}</td>
-                    <td>{year.Chair}</td>
-                    <td>{year.Secretary}</td>
-                    <td>{year.Treasurer}</td>
-                    <td>
-                        {year.Other1}<br />
-                        {year.Other2}<br />
-                        {year.Other3}<br />
-                        {year.Other4}<br />
-                        {year.Other5}<br />
-                        {year.Other6}<br />
-                        {year.Other7}
-                    </td>
+                    <th>Year</th>
+                    <th>Chair</th>
+                    <th>Secretary</th>
+                    <th>Treasurer</th>
+                    <th>Other Members</th>
                 </tr>
-            ))}
-        </tbody>
-    </table>
-</div>
-
+            </thead>
+            <tbody>
+                {
+                    historicCommittee.map((year) => (
+                        <tr>
+                            <td>
+                                {year.YearStart}-{year.YearEnd}
+                            </td>
+                            <td>{year.Chair}</td>
+                            <td>{year.Secretary}</td>
+                            <td>{year.Treasurer}</td>
+                            <td>
+                                {[
+                                    year.Other1,
+                                    year.Other2,
+                                    year.Other3,
+                                    year.Other4,
+                                    year.Other5,
+                                    year.Other6,
+                                    year.Other7,
+                                    year.Other8,
+                                    year.Other9,
+                                    year.Other10,
+                                ]
+                                    .filter(
+                                        (role) =>
+                                            role !== null &&
+                                            role !== undefined &&
+                                            role.trim() !== "",
+                                    )
+                                    .map((role) => (
+                                        <>
+                                            {role}
+                                            <br />
+                                        </>
+                                    ))}
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
 </Layout>
