@@ -1,62 +1,81 @@
 ---
 // Get all JPG files in the specified directory
-const coverImages = await Astro.glob('/src/assets/talks/termcards/*');
+const coverImages = await Astro.glob("/src/assets/talks/termcards/*");
+
+function termNameToIndex(term_name: string): string {
+    // Order of terms within a calendar year
+    switch (term_name.toLowerCase()) {
+        case "lent":
+            return "0";
+        case "easter":
+            return "1";
+        case "michaelmas":
+            return "2";
+        case "advent":
+            return "3";
+        default:
+            return "4";
+    }
+}
 
 // Extract term and year from filename and sort images in descending order
-const sortedImages = [...coverImages].map(cover => {
-    const fileName = cover.default.src.split('/').pop();
-    const termYearMatch = fileName.match(/(lent|easter|michaelmas|advent)_(20\d{2})/i);
-    
-    let termLabel = "Unknown Term";
-    if (termYearMatch) {
-        const term = termYearMatch[1].charAt(0).toUpperCase() + termYearMatch[1].slice(1); // Capitalize term
-        const year = termYearMatch[2]; // Full year (20XX)
-        termLabel = `${term} ${year}`;
-    }
-    
-    // Generate the PDF path based on the image filename
-    const pdfFilename = fileName.replace('.jpg', '.pdf');
-    const pdfPath = `/src/assets/talks/pdfs/${pdfFilename}`;
-    
-    return {
-        ...cover,
-        termLabel,
-        sortKey: termYearMatch ? termYearMatch[2] + termYearMatch[1] : "0", // For sorting
-        pdfUrl: `/src/assets/talks/pdfs/${pdfFilename}` // Public URL for the PDF
-    };
-}).sort((a, b) => {
-    return b.sortKey.localeCompare(a.sortKey); // Sort by year descending
-});
+const sortedImages = [...coverImages]
+    .map((cover) => {
+        const fileName = cover.default.src.split("/").pop();
+        const termYearMatch = fileName.match(
+            /(lent|easter|michaelmas|advent)_(20\d{2})/i,
+        );
 
-let selectedImage = null;
+        let termLabel = "Unknown Term";
+        if (termYearMatch) {
+            const term =
+                termYearMatch[1].charAt(0).toUpperCase() +
+                termYearMatch[1].slice(1); // Capitalize term
+            const year = termYearMatch[2]; // Full year (20XX)
+            termLabel = `${term} ${year}`;
+        }
 
-function openImage(imageSrc) {
-    selectedImage = imageSrc;
-}
+        // Generate the PDF path based on the image filename
+        const pdfFilename = fileName.replace(".jpg", ".pdf");
+        const pdfPath = `/src/assets/talks/pdfs/${pdfFilename}`;
 
-function closeImage() {
-    selectedImage = null;
-}
+        return {
+            ...cover,
+            termLabel,
+            sortKey: termYearMatch
+                ? termYearMatch[2] + "_" + termNameToIndex(termYearMatch[1])
+                : "0", // For sorting
+            pdfUrl: `/src/assets/talks/pdfs/${pdfFilename}`, // Public URL for the PDF
+        };
+    })
+    .sort((a, b) => {
+        return b.sortKey.localeCompare(a.sortKey); // Sort by year descending
+    });
 ---
 
 <div class="cover-gallery">
-    {sortedImages.map((cover) => {
-        return (
-            <div class="cover-item" onClick={() => openImage(cover.default.src)}>
-                <img src={cover.default.src} alt={`Talks Term Card ${cover.termLabel}`} class="cover-image" />
-                <div class="cover-year">{cover.termLabel}</div>
-            </div>
-        );
-    })}
+    {
+        sortedImages.map((cover) => {
+            return (
+                <a
+                    class="cover-link"
+                    href={cover.default.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div class="cover-item">
+                        <img
+                            src={cover.default.src}
+                            alt={`Talks Term Card ${cover.termLabel}`}
+                            class="cover-image"
+                        />
+                        <div class="cover-year">{cover.termLabel}</div>
+                    </div>
+                </a>
+            );
+        })
+    }
 </div>
-
-{selectedImage && (
-    <div class="overlay" onClick={closeImage}>
-        <div class="overlay-content">
-            <img src={selectedImage} class="large-image" />
-        </div>
-    </div>
-)}
 
 <style>
     .cover-gallery {
@@ -65,12 +84,12 @@ function closeImage() {
         gap: 20px;
         margin: 30px 0;
     }
-    
+
     .cover-link {
         text-decoration: none;
         color: inherit;
     }
-    
+
     .cover-item {
         transition: transform 0.3s ease;
         display: flex;
@@ -78,41 +97,21 @@ function closeImage() {
         align-items: center;
         cursor: pointer;
     }
-    
+
     .cover-item:hover {
         transform: scale(1.05);
     }
-    
+
     .cover-image {
         width: 100%;
         height: auto;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    
+
     .cover-year {
         margin-top: 8px;
         font-weight: bold;
-    }
-
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .overlay-content {
-        max-height: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .large-image {
