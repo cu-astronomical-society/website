@@ -1,12 +1,61 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import fs from "node:fs";
+import path from "node:path";
+
+const pdf_directory = path.resolve("./public/observation-recommendations");
+let pdf_files: string[] = [];
+
+try {
+  const all_files = fs.readdirSync(pdf_directory);
+  pdf_files = all_files.filter((file) => file.toLowerCase().endsWith(".pdf"));
+} catch (error) {
+  console.error("Directory not found or could not be read:", error);
+}
+
+function format_display_name(filename: string) {
+  const name_without_ext = filename.replace(/\.pdf$/i, "");
+
+  // Remove the first bit used for sorting
+  const no_front = name_without_ext.replace(/^.*?__/, "");
+
+  const with_spaces = no_front.replace(/_/g, " ");
+
+  return with_spaces.charAt(0).toUpperCase() + with_spaces.slice(1);
+}
+
+const documents = pdf_files
+  .sort((a, b) => b.localeCompare(a))
+  .map((file) => ({
+    url: `/observation-recommendations/${file}`,
+    display_name: format_display_name(file),
+  }));
 ---
 
 <Layout>
   <h1>Observation Guides</h1>
 
+  <a href="/obsguide2025.pdf">PDF Observation Guide</a> - please read this through,
+  the below are based off this guide but may not be as detailed.
 
-  <a href="/obsguide2025.pdf">PDF Observation Guide</a> - please read this through, the below are based off this guide but may not be as detailed.
+  <h2>Object recommendations</h2>
+  Once in a while the observation secretaries will compile a list of recommended object
+  to observe in the coming weeks or months. Members are encouraged to take a look
+  into it for inspiration.
+
+  {
+    documents.length > 0 ? (
+      documents.map((doc) => (
+        <p>
+          <a href={doc.url} target="_blank" rel="noopener noreferrer">
+            {doc.display_name}
+          </a>
+        </p>
+      ))
+    ) : (
+      <p>No recommendations available at this time.</p>
+    )
+  }
 
   <h2>Telescope guides</h2>
 
@@ -20,6 +69,7 @@ import Layout from "../../layouts/Layout.astro";
 
   <p><a href="/obs/guides/general">General Observation</a></p>
 
-
-  <a href="/obsguide2023.pdf">Outdated 2023 PDF Guide</a> - the Observation Guide has recently been updated, but this is still here for reference if needed. For the most up to date information, please refer to the 2025 guide above.
+  <a href="/obsguide2023.pdf">Outdated 2023 PDF Guide</a> - the Observation Guide
+  has recently been updated, but this is still here for reference if needed. For the
+  most up to date information, please refer to the 2025 guide above.
 </Layout>
