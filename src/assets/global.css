@@ -10,68 +10,72 @@
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 2em;
-    text-align: center;
-    margin-top: 3em;
-}
+@layer base {
+    h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 2em;
+        text-align: center;
+        margin-top: 3em;
+    }
 
-h2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
+    h2 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
 
-h3 {
-    font-size: 1.5em;
-    /* font-weight: bold; */
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-}
+    h3 {
+        font-size: 1.5em;
+        /* font-weight: bold; */
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+    }
 
-h4 {
-    font-size: 1.25em;
-    /* font-weight: bold; */
-    margin-bottom: 0.25em;
-    margin-top: 0.5em;
-}
+    h4 {
+        font-size: 1.25em;
+        /* font-weight: bold; */
+        margin-bottom: 0.25em;
+        margin-top: 0.5em;
+    }
 
-/* ul li style with dot */
-/* ul {
+    /* ul li style with dot */
+    /* ul {
     list-style-type: disc;
     margin-left: 1.5em;
 } */
 
-/* ul, ol {
+    /* ul, ol {
     list-style-position: inside;
     margin-left: 1.5em;
 } */
 
-ul {
-    list-style-type: disc;
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    p {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    /* Link styling */
+    a {
+        text-decoration: underline;
+    }
 }
 
-ol {
-    list-style-type: decimal;
-}
-
-p {
-    font-size: 1em;
-    margin-bottom: 0.5em;
-}
-
-/* Link styling */
-a {
-    text-decoration: underline;
-}
-
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
+
 th {
     background-color: #f2f2f2;
     position: sticky;
@@ -96,13 +100,20 @@ ol[type="A"], ol[type="1"], ol[type="i"], blockquote, strong {
     .flex {
         flex-direction: column;
     }
-    .w-1/2, .w-2/5, .w-3/5, .w-4/5, .w-1/5 {
+
+    .w-1/2,
+    .w-2/5,
+    .w-3/5,
+    .w-4/5,
+    .w-1/5 {
         width: 100%;
     }
-    .flex > div {
+
+    .flex>div {
         order: 2;
     }
-    .flex > div:first-child {
+
+    .flex>div:first-child {
         order: 1;
     }
 }
