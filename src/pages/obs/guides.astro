@@ -38,34 +38,39 @@ const documents = pdf_files
   <a href="/obsguide2025.pdf">General Observation Guide</a> - please read this through,
   the below are based off this guide but may not be as detailed, and do not contain any pictures.
 
-  <h2>Object Recommendations</h2>
-  Often, the Observation Secretaries will compile a list of recommended objects
-  to observe in the coming Term, or weeks or months. Members are highly encouraged to take a look
-  into it for inspiration.
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h2>Object Recommendations</h2>
+      Often, the Observation Secretaries will compile a list of recommended objects
+      to observe in the coming Term, or weeks or months. Members are highly encouraged to take a look
+      into it for inspiration.
 
-  {
-    documents.length > 0 ? (
-      documents.map((doc) => (
-        <p>
-          <a href={doc.url} target="_blank" rel="noopener noreferrer">
-            {doc.display_name}
-          </a>
-        </p>
-      ))
-    ) : (
-      <p>No recommendations available at this time.</p>
-    )
-  }
+      {
+        documents.length > 0 ? (
+          documents.map((doc) => (
+            <p>
+              <a href={doc.url} target="_blank" rel="noopener noreferrer">
+                {doc.display_name}
+              </a>
+            </p>
+          ))
+        ) : (
+          <p>No recommendations available at this time.</p>
+        )
+      }
+    </div>
+    <div>
+      <h2>Other Guides</h2>
 
-  <h2>Other Guides</h2>
+      <p><a href="/Moon-sketching-guide.pdf">Moon Sketching</a></p>
 
-  <p><a href="/Moon-sketching-guide.pdf">Moon Sketching</a></p>
+      <p><a href="/obs/guides/binoculars">Binoculars</a></p>
 
-  <p><a href="/obs/guides/binoculars">Binoculars</a></p>
+      <p><a href="/obs/guides/general">General Observation</a></p>
 
-  <p><a href="/obs/guides/general">General Observation</a></p>
-
-  <a href="/obsguide2023.pdf">Outdated 2023 PDF Guide</a> - the Observation Guide
-  had been updated in 2025, but this is still here for reference if needed. For the
-  most up to date information, please refer to the 2025 guide above.
+      <a href="/obsguide2023.pdf">Outdated 2023 PDF Guide</a> - the Observation Guide
+      had been updated in 2025, but this is still here for reference if needed. For the
+      most up to date information, please refer to the 2025 guide above.
+    </div>
+  </div>
 </Layout>
