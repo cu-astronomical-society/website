@@ -97,9 +97,6 @@ ol[type="A"], ol[type="1"], ol[type="i"], blockquote, strong {
 
 /* Responsive layout for images */
 @media (max-width: 1000px) {
-    .flex {
-        flex-direction: column;
-    }
 
     .w-1/2,
     .w-2/5,
