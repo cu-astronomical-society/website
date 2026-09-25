@@ -8,6 +8,13 @@ import northumberlandOutside from "../assets/photos/northumberland-outside.jpg";
 import northumberlandInside from "../assets/photos/northumberland-inside.jpg";
 import socialsPhoto from "../assets/photos/socials_photo.jpg";
 import telescope from "../assets/photos/telescope.jpeg";
+import freshers_nebula from "../assets/freshers_photos/nebula.jpg";
+import freshers_northumberland_night from "../assets/freshers_photos/northumberland_night.jpg";
+import freshers_moon from "../assets/freshers_photos/moon.jpg";
+import freshers_solar_telescope from "../assets/freshers_photos/solar_telescope.jpg";
+import freshers_thorrowgood_night from "../assets/freshers_photos/thorrowgood_night.jpg";
+import freshers_2026_committee from "../assets/freshers_photos/2026_committee.jpg";
+import freshers_northumberland_inside from "../assets/freshers_photos/northumberland_inside.jpg";
 ---
 
 <Layout>
@@ -38,10 +45,54 @@ import telescope from "../assets/photos/telescope.jpeg";
           </svg>
         </a>
     </div>
-    <div class="flex flex-col sm:flex-row gap-4 mt-4 mb-8 justify-center">
-        <!-- <a href="/freshers-posters/CUAS-freshers-poster--2026-2027.pdf" target="_blank" rel="noopener noreferrer">
-            We're really excited to see so many new faces this year during freshers fair! As a taster of what we have planned for the next few months, have a quick read of the linked poster. Be sure to check us out at Freshers' Fair!
-        </a> -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 mb-8">
+        <div class="order-1 md:col-start-1 md:row-start-1 p-4 md:pb-4">
+            <h2 class="!mt-0 text-4xl md:text-5xl tracking-tight">Calling all Freshers!</h2>
+            <h3 class="!mt-0 font-normal text-2xl md:text-3xl mb-0">Freshers' Fair: 6th & 7th Oct</h3>
+        </div>
+
+        <div class="order-2 md:col-start-1 md:row-start-2 p-4 pt-0">
+            <div class="flex flex-row gap-2">
+                <div class="flex flex-col gap-2 w-1/2">
+                    <Image src={freshers_nebula} alt="Nebula" class="w-full object-cover aspect-[4/3]" />
+                    <Image src={freshers_solar_telescope} alt="Solar telescope observation" class="w-full object-cover aspect-[4/3]" />
+                    <Image src={freshers_thorrowgood_night} alt="Thorrowgood telescope dome at night" class="w-full object-cover aspect-[4/3]" />
+                </div>
+                <div class="flex flex-col gap-2 w-1/2">
+                    <Image src={freshers_moon} alt="Moon through telescope" class="w-full object-cover aspect-[4/3]" />
+                    <div class="relative flex-grow">
+                        <Image src={freshers_northumberland_night} alt="Northumbeland telescope dome at night" class="w-full h-full object-cover absolute inset-0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-3 md:col-start-2 md:row-start-1 p-4 md:pb-4 flex flex-col justify-end">
+            <p class="mb-0">
+                We're really excited to see so many new faces this year during freshers' fair! As a taster of what we have planned for the next few months, have a quick read below.
+            </p>
+        </div>
+
+        <div class="order-4 md:col-start-2 md:row-start-2 p-4 pt-0 flex flex-col">
+            <div class="grid grid-cols-[4fr_3fr] gap-2 items-start mb-4">
+                <Image src={freshers_2026_committee} alt="2026 committee" class="w-full object-cover aspect-square" />
+                <Image src={freshers_northumberland_inside} alt="Northumberland telescope dome inside" class="w-full object-cover aspect-[3/4]" />
+            </div>
+
+            <div class="mt-2">
+                <p>Keep your eyes peeled for these upcoming events:</p>
+                <ul class="mb-4">
+                    <li><strong>Freshers' social</strong> (followed by an obsnight if weather permits) - 10th October</li>
+                    <li><strong>Northumberland ObsDemo</strong> 11th October</li>
+                    <li>Plenty of <strong>Speaker Talks</strong> throughout the term</li>
+                    <li><strong>Thorrowgood ObsDemos</strong> throughout term</li>
+                    <li>... and much more!</li>
+                </ul>
+                <p>We look forward to seeing you soon :)</p>
+                <p class="text-sm text-gray-500 mt-4 !mb-0">Photo credits: Arran G, Lan H, CUAS archive</p>
+            </div>
+        </div>
     </div>
     
     <div class="flex flex-col md:flex-row">
