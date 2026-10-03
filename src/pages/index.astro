@@ -3,7 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import cuasLogo from "../assets/logo/cuas_largeblack_on_white.svg";
 import obsNight from "../assets/photos/obs_night.png";
+import obsNightDark from "../assets/photos/obs_night_dark.png";
 import talksPhoto from "../assets/photos/talks_photo.jpg";
+import talksPhotoTrue from "../assets/photos/talks_photo_true.jpg";
 import socialsPhoto from "../assets/photos/socials_photo.jpg";
 import telescope from "../assets/photos/telescope.jpeg";
 import freshers_nebula from "../assets/freshers_photos/nebula.jpg";
@@ -13,6 +15,7 @@ import freshers_solar_telescope from "../assets/freshers_photos/solar_telescope.
 import freshers_thorrowgood_night from "../assets/freshers_photos/thorrowgood_night.jpg";
 import freshers_2026_committee from "../assets/freshers_photos/2026_committee.jpg";
 import freshers_northumberland_inside from "../assets/freshers_photos/northumberland_inside.jpg";
+
 ---
 
 <Layout>
@@ -123,7 +126,7 @@ import freshers_northumberland_inside from "../assets/freshers_photos/northumber
     <div class="flex flex-col md:flex-row">
         <div class="w-full md:w-2/5 p-4 order-2 md:order-1">
             <Image
-                src={talksPhoto}
+                src={talksPhotoTrue}
                 alt="Talks photo"
                 class="block mx-auto w-full"
             />
@@ -138,7 +141,8 @@ import freshers_northumberland_inside from "../assets/freshers_photos/northumber
                 questions to the speaker, and are followed by casual
                 conversation over refreshments. Talks are free to attend for everyone.
             </p>
-            <a href="/talks">Find out more</a>
+            Find out more about
+            <a href="/talks">CUAS Talks </a>.
         </div>
     </div>
     <div class="flex flex-col md:flex-row">
@@ -163,7 +167,7 @@ import freshers_northumberland_inside from "../assets/freshers_photos/northumber
         </div>
         <div class="w-full md:w-2/5 order-2">
             <Image
-                src={freshers_northumberland_night}
+                src={obsNightDark}
                 alt="Observing night"
                 class="block mx-auto w-full"
             />
@@ -173,7 +177,7 @@ import freshers_northumberland_inside from "../assets/freshers_photos/northumber
         <div class="w-full md:w-2/5 p-4 order-2 md:order-1">
             <Image
                 src={socialsPhoto}
-                alt="Socials photo"
+                alt="May Week Garden Party photo"
                 class="block mx-auto w-full"
             />
         </div>
@@ -181,12 +185,13 @@ import freshers_northumberland_inside from "../assets/freshers_photos/northumber
             <h3>Social events</h3>
             <p>
                 The main social events are the Annual Dinner in Lent and the
-                Garden Party in Easter. There is also a squash at the beginning
+                Garden Party in Easter (May Week). There is also a squash at the beginning
                 of the academic year and socials and quiz nights throughout the year.
                 Depending on the level of interest, we organise pub meets and/or
                 lunches.
             </p>
-            <a href="/socials">Find out more</a>
+        Find out more about
+            <a href="/talks">CUAS Socials </a>.
         </div>
     </div>
     <h2></h2>
