@@ -35,8 +35,11 @@ const documents = pdf_files
 <Layout>
   <h1>Observation Guides</h1>
 
-  <a href="/obsguide2025.pdf">General Observation Guide</a> - please read this through,
-  the below are based off this guide but may not be as detailed, and do not contain any pictures.
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="/obsguide2025.pdf" target="_blank" rel="noopener noreferrer" class="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 text-center no-underline">
+      General Observation Guide
+    </a>
+  </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div>
@@ -66,11 +69,8 @@ const documents = pdf_files
 
       <p><a href="/obs/guides/binoculars">Binoculars</a></p>
 
-      <p><a href="/obs/guides/general">General Observation</a></p>
+      <!--<p><a href="/obs/guides/general">General Observation</a></p> -->
 
-      <p><a href="/obsguide2023.pdf">Outdated 2023 PDF Guide</a> - the Observation Guide
-      had been updated in 2025, but this is still here for reference if needed. For the
-      most up to date information, please refer to the 2025 guide above.</p>
     </div>
   </div>
 </Layout>
